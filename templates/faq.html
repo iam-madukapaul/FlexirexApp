@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+<!-- breadcrumb begin -->
+<div class="breadcrumb-oitila">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-8">
+                <div class="part-txt">
+                    <h1>faq</h1>
+                    <ul>
+                        <li>home</li>
+                        <li>faq</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb end -->
+
+<!-- faq begin -->
+<div class="faq">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-xl-3 col-lg-3 col-md-4">
+                <div class="faq-sidebar">
+                    <div class="search-widget">
+                        <form>
+                            <input type="text" placeholder="Search here">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">General Questions</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">User Profile and Referral</a>
+                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Withdrawal</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8">
+                <div class="faq-content">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="single-faq">
+                                <h4>How do I get started with investing on <span style="color: #004aad;">Flexirex</span>?</h4>
+                                <p>Getting started is simple! First, create an account on our platform by providing your basic information. Once your account is 
+                                    set up, you can browse through our diverse investment opportunities and choose the ones that align with your financial goals. 
+                                    Follow the prompts to fund your account using our accepted payment method, and start building your investment 
+                                    portfolio. Our user-friendly interface and helpful guides ensure a seamless and rewarding experience.</p>
+                            </div>
+
+                            <div class="single-faq">
+                                <h4> What is the minimum investment amount required?</h4>
+                                <p>We believe in making investing accessible to everyone. The minimum investment amount varies depending on the specific opportunities 
+                                    you're interested in. While some options might have a lower entry point, we recommend reviewing the details of each investment to 
+                                    determine the minimum required(check Flexirex Plan section). Rest assured, we offer opportunities to suit a range of budgets, ensuring that anyone can embark 
+                                    on their investment journey with us.</p>
+                            </div>
+
+                            <div class="single-faq">
+                                <h4>How does <span style="color: #004aad;">Flexirex</span> ensure the security of my investments and personal information?</h4>
+                                <p> Your security is our top priority. We employ state-of-the-art encryption and security measures to safeguard your personal 
+                                    information and investment data. Our platform adheres to strict industry standards and undergoes regular audits to maintain 
+                                    the highest level of security. Additionally, your investments are managed by experienced professionals who follow meticulous 
+                                    risk management protocols. With Flexirex, you can invest with confidence, knowing that your financial 
+                                    well-being is in trusted hands.</p>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="single-faq">
+                                <h4>How do I update my personal information on my user profile?</h4>
+                                <p>Keeping your profile up-to-date is important. Simply log in to your account and navigate to the profile 
+                                    section, there you can edit and update your personal information.
+                                     Ensuring your information is accurate helps us provide you with a seamless and personalized 
+                                    investment experience.</p>
+                            </div>
+                            <div class="single-faq">
+                                <h4>How can I refer friends and family to <span style="color: #004aad;">Flexirex</span>?</h4>
+                                <p> Sharing the benefits of Flexirex with your network is rewarding. Log in to your account 
+                                    and locate the profile section. You'll find a unique referral link that you can share with friends and 
+                                    family. When they sign up and make their first investment using your referral link, you both stand to earn 
+                                    rewards or bonuses. It's a win-win opportunity to grow your investments while helping your loved ones 
+                                    succeed financially.</p>
+                            </div>
+                            <div class="single-faq">
+                                <h4>What type of rewards can I earn through the referral program?</h4>
+                                <p>Our referral program offers enticing rewards to both you and your referrals. The specific rewards may vary 
+                                    based on ongoing promotions and the investment amounts of your referred individuals. Generally, you can 
+                                    earn bonuses, discounts, or even a percentage of your referrals' initial investments. Stay tuned to our 
+                                    communication channels for updates on the latest referral program incentives.</p>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                            <div class="single-faq">
+                                <h4>How do I make a withdrawal from my investment account?</h4>
+                                <p>Withdrawing funds from your investment account is a straightforward process. Log in to your account and 
+                                    navigate to the withdrawal section. From there, you can input the amount you wish to withdraw and choose 
+                                    our preferred withdrawal method. Our team ensures timely processing, and you'll receive your funds 
+                                    according to the withdrawal method's processing time.</p>
+                            </div>
+
+                            <div class="single-faq">
+                                <h4>Are there any fees associated with withdrawals?</h4>
+                                <p>We value transparency in all our dealings. While some investment opportunities may have specific terms, 
+                                    Flexirex aims to keep withdrawal fees to a minimum. We believe in maximizing 
+                                    your returns, and we're committed to providing a clear understanding of any associated costs.</p>
+                            </div>
+
+                            <div class="single-faq">
+                                <h4> Can I withdraw my profits at any time, or is there a specific withdrawal schedule?</h4>
+                                <p>Flexibility is a cornerstone of our platform. You have the freedom to request withdrawals whenever you'd 
+                                    like, subject to the terms of each investment opportunity. Most investment options offer the flexibility 
+                                    to withdraw profits at any time, providing you with the convenience to access your funds when you need them. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- faq end -->
+
+{% endblock %}

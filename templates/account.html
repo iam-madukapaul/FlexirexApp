@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+{% include 'breadcrumbdashboard.html' %}
+
+
+<!-- account begin -->
+<div class="user-dashboard">
+    <div class="container">
+
+        <div class="dashboard-menu">
+            <nav>
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'account' %}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'investment' %}">Investment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'withdraw' %}">Withdraw</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'history' %}">Investment History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'withdrawal_history' %}">Withdrawal History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">My profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="user-statics">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-statics">
+                        <div class="part-icon">
+                            <img src="{% static 'img/icon/002-cash.png' %}" alt="">
+                        </div>
+                        <div class="part-info">
+                            <span class="number">${{account.ultimate_balance}}</span>
+                            <span class="text">Ultimate Balance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-statics">
+                        <div class="part-icon">
+                            <img src="{% static 'img/icon/003-credit-card.png' %}" alt="">
+                        </div>
+                        <div class="part-info">
+                            <span class="number">${{account.total_payout}}</span>
+                            <span class="text">Total Payout</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-statics">
+                        <div class="part-icon">
+                            <img src="{% static 'img/icon/001-donation.png' %}" alt="">
+                        </div>
+                        <div class="part-info">
+                            <span class="number">${{account.total_deposit}}</span>
+                            <span class="text">Deposits Total</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-statics">
+                        <div class="part-icon">
+                            <img src="{% static 'img/icon/004-hourglass.png' %}" alt="">
+                        </div>
+                        <div class="part-info">
+                            <span class="number">${{account.pending_amount}}</span>
+                            <span class="text">Pending Amount</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-statics">
+                        <div class="part-icon">
+                            <img src="{% static 'img/icon/005-percentage.png' %}" alt="">
+                        </div>
+                        <div class="part-info">
+                            <span class="number">${{account.interest_earn}}</span>
+                            <span class="text">Interest Earn</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-statics">
+                        <div class="part-icon">
+                            <img src="{% static 'img/icon/006-wage.png' %}" alt="">
+                        </div>
+                        <div class="part-info">
+                            <span class="number">${{account.total_earning}}</span>
+                            <span class="text">Total Earning</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-statics">
+                        <div class="part-icon">
+                            <img src="{% static 'img/icon/007-referral.png' %}" alt="">
+                        </div>
+                        <div class="part-info">
+                            <span class="number">${{account.referral_earnings}}</span>
+                            <span class="text">Referral Earings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-statics">
+                        <div class="part-icon">
+                            <img src="{% static 'img/icon/008-transfer.png' %}" alt="">
+                        </div>
+                        <div class="part-info">
+                            <span class="number">${{account.lifetime_bonus}}</span>
+                            <span class="text">Lifetime Bonus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- account end -->
+
+{% endblock %}
+

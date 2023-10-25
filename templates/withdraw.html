@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    /* Hide the drop-down arrow */
+    .dropdown-toggle::after {
+        display: none;
+    }
+</style>
+{% include 'partials/header.html' %}
+{% include 'breadcrumbdashboard.html' %}
+
+<!-- account begin -->
+<div class="user-dashboard">
+    <div class="container">
+
+        <div class="dashboard-menu">
+            <nav>
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account' %}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'investment' %}">Investment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'withdraw' %}">Withdraw</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'history' %}">Investment History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'withdrawal_history' %}">Withdrawal History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">My profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="withdraw-section">
+            <div class="row">
+                
+                <div class="col-xl-9 col-lg-9 col-md-9">
+                    <h3 class="title">
+                        Withdraw Your Funds
+                    </h3>
+                    <span>Please ensure you have already provided the correct USDT TRC20 Wallet Address</span>
+
+                    <div class="last-step">
+                        <div class="payment-method-list row">
+
+                            <div class="col-xl-6 col-lg-6 col-sm-12">
+                                <div >
+                                    <label>Enter Withdrawal Amount</label>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <span class="currency-symbol" id="basic-addon1">$</span>
+                                        <input type="number" step="0.01" min="0.01" name="withdrawal_amount" id="withdrawal_amount" class="inputted-amount" value="1000" required>
+                                        
+                                        <label>Payment Method</label>
+                                        <div class="dropdown show">
+
+                                        <a class="dropdown-toggle displayed-selected-plan" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="payment-method-icon">
+                                                <img src="{% static 'img/currency/001-bitcoin.png' %}" alt="">
+                                            </span>
+                                            Bitcoin (CryptoCurrency)
+                                        </a>
+                                        </div><br>
+                                        <button type="submit" class="btn-hyipox-medium withdraw-btn">Let's Withdraw</button>
+                                    </form>
+                                    
+
+                                </div>
+                            </div>
+                            
+                            <div class="col-xl-6 col-lg-6 col-sm-12">
+                                <div class="available-balance-el">
+                                    <span class="title">Bitcoin Balance</span>
+                                    <ul>
+                                        <li class="available">
+                                            <span class="text">Available: </span>
+                                            <span class="amount">+ ${{account.ultimate_balance}}</span>
+                                        </li>
+                                        <li class="pending">
+                                            <span class="text">Payout: </span>
+                                            <span class="amount">- ${{account.total_payout}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- account end -->
+
+{% endblock %}
+

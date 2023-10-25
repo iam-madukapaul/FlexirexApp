@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    /* Hide the drop-down arrow */
+    .dropdown-toggle::after {
+        display: none;
+    }
+</style>
+{% include 'partials/header.html' %}
+{% include 'breadcrumbdashboard.html' %}
+
+<!-- account begin -->
+<div class="user-dashboard">
+    <div class="container">
+
+        <div class="dashboard-menu">
+            <nav>
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account' %}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'investment' %}">Investment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'withdraw' %}">Withdraw</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'history' %}">Investment History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'withdrawal_history' %}">Withdrawal History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">My profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        
+
+        <h3 class="title">
+            Select Your Favourite Plan
+        </h3>
+
+        <div class="d-none">
+            <div class="icon-completed">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                        <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"></circle>
+                        <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "></polyline>
+                    </svg>
+            </div>
+        </div>
+
+        <div class="select-plan">
+            <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
+                    <div class="single-plan">
+                        <h3>Basic Plan</h3>
+                        <div class="plan-icon">
+                            <img class="icon-img" src="{% static 'img/icon/bronze-medal.png' %}" alt="">
+                        </div>
+                        <div class="price-info">
+                            <span class="parcent">1.5%</span>
+                            <span class="price">$50<small> Minimum </small></span>
+                            <span class="price"> $1,000<small> Miximum </small></span>
+                        </div>
+                        <a href="#" class="btn-hyipox-medium price-button">Invest now</a>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
+                    <div class="single-plan">
+                        <h3>Standard Plan</h3>
+                        <div class="plan-icon">
+                            <img class="icon-img" src="{% static 'img/icon/trophy-1.png' %}" alt="">
+                        </div>
+                        <div class="price-info">
+                            <span class="parcent">3.5%</span>
+                            <span class="price">$5,000<small> Minimum </small></span>
+                            <span class="price"> $50,000<small> Miximum </small></span>
+                        </div>
+                        <a href="#" class="btn-hyipox-medium price-button">Invest now</a>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
+                    <div class="single-plan">
+                        <h3>Silver Plan</h3>
+                        <div class="plan-icon">
+                            <img class="icon-img" src="{% static 'img/icon/bronze-medal.png' %}" alt="">
+                        </div>
+                        <div class="price-info">
+                            <span class="parcent">0.5%</span>
+                            <span class="price">$10,000<small> Minimum </small></span>
+                            <span class="price"> $100,000<small> Miximum </small></span>
+                        </div>
+                        <a href="#" class="btn-hyipox-medium price-button">Invest now</a>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
+                    <div class="single-plan">
+                        <h3>Premium Plan</h3>
+                        <div class="plan-icon">
+                            <img class="icon-img" src="{% static 'img/icon/trophy-1.png' %}" alt="">
+                        </div>
+                        <div class="price-info">
+                            <span class="parcent">2.5%</span>
+                            <span class="price">$1,000<small> Minimum </small></span>
+                            <span class="price"> $10,000<small> Miximum </small></span>
+                        </div>
+                        <a href="#" class="btn-hyipox-medium price-button">Invest now</a>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
+                    <div class="single-plan">
+                        <h3>Gold Plan</h3>
+                        <div class="plan-icon">
+                            <img class="icon-img" src="{% static 'img/icon/bronze-medal.png' %}" alt="">
+                        </div>
+                        <div class="price-info">
+                            <span class="parcent">4.5%</span>
+                            <span class="price">$15,000<small> Minimum </small></span>
+                            <span class="price"> $500,000<small> Miximum </small></span>
+                        </div>
+                        <a href="#" class="btn-hyipox-medium price-button">Invest now</a>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4">
+                    <div class="single-plan">
+                        <h3>Diamond Plan</h3>
+                        <div class="plan-icon">
+                            <img class="icon-img" src="{% static 'img/icon/trophy.png' %}" alt="">
+                        </div>
+                        <div class="price-info">
+                            <span class="parcent">5.5%</span>
+                            <span class="price">$50,000<small> Minimum </small></span>
+                            <span class="price"> $1,000,000<small> Miximum </small></span>
+                        </div>
+                        <a href="#" class="btn-hyipox-medium price-button">Invest now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-5">
+                <h3 class="title">
+                    USDT (TRC20) deposit address
+                </h3>
+                <div class="add-credit-card card">
+                    <div class="card-body">
+                        <div class="row">
+                            <img src="{% static 'img/barcode.png' %}" alt="">
+                        </div>
+                        <hr>
+                        <div  id="textToCopy"><h5>TJym9P3xn9F2nsLrf1DmCtrwmFS3NoMoqr</h5></div>
+                        <button class="btn-hyipox-medium btn-add-new-card" id="copyButton">Copy address</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-7">
+                <h3 class="title">
+                    Enter Your Amount
+                </h3>
+                <div class="last-step">
+                    <div>
+                        <label>Enter Your Amount</label>
+                        <form method="post">
+                            {% csrf_token %}
+                            <span class="currency-symbol" id="basic-addon1">$</span>
+                            <input type="number" class="inputted-amount" value="50" name="amount" id="amount" required>
+                            <br>
+                            <label for="plan">Select Plan:</label>
+                            <select name="plan" id="plan">
+                                {% for plan in plans %}
+                                    <option value="{{ plan.value }}">{{ plan.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <br>
+                            <label for="payment_method">Payment Method</label>
+                            <div class="dropdown show">
+                                <a class="dropdown-toggle displayed-selected-plan" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="payment-method-icon">
+                                        <img src="{% static 'img/currency/001-bitcoin.png' %}" alt="">
+                                    </span>
+                                    Bitcoin (CryptoCurrency)
+                                </a>
+                            </div>
+                            <br>
+                            <input type="submit" value="Invest">
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- account end -->
+
+<script>
+    document.getElementById("copyButton").addEventListener("click", function() {
+      // Get the text from the element with id 'textToCopy'
+      var textToCopy = document.getElementById("textToCopy").innerText;
+      
+      // Create a temporary textarea to hold the text
+      var tempTextarea = document.createElement("textarea");
+      tempTextarea.value = textToCopy;
+      
+      // Append the textarea to the DOM
+      document.body.appendChild(tempTextarea);
+      
+      // Select and copy the text from the temporary textarea
+      tempTextarea.select();
+      document.execCommand("copy");
+      
+      // Remove the temporary textarea from the DOM
+      document.body.removeChild(tempTextarea);
+      
+      // Optionally, provide some visual feedback to the user
+      alert("Text copied to clipboard: " + textToCopy);
+    });
+  </script>
+
+{% endblock %}

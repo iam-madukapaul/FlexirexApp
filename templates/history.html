@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+{% include 'breadcrumbdashboard.html' %}
+<!-- breadcrumb end -->
+
+<!-- account begin -->
+<div class="user-dashboard">
+    <div class="container">
+
+        <div class="dashboard-menu">
+            <nav>
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account' %}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'investment' %}">Investment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'withdraw' %}">Withdraw</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'history' %}">Investment History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'withdrawal_history' %}">Withdrawal History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">My profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        
+
+        <h3 class="title">
+            Recent Transaction
+        </h3>
+        <div class="transactions-table">
+            <div class="table-responsive">
+                <table id="example" class="display misco-data-table" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Selected Plan</th>
+                            <th>Deposit Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for transaction in transaction_history reversed %}
+                        <tr>
+                            <td>{{ transaction.transaction_id|slice:'5:' }}</td>
+                            <td>{{ transaction.selected_plan }}</td>
+                            <td>${{ transaction.deposit_amount }}</td>
+                            <td>{{ transaction.transaction_date }}</td>
+                            <td>{{ transaction.status }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- account end -->
+
+{% endblock %}

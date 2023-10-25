@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load django_bootstrap5 %}
+
+    {% bootstrap_css %}
+    <title> lexirex - Investment Nexus</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/fav.ico' %}" type="image/x-icon">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- fontawesome icon  -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+    <!-- flaticon css -->
+    <link rel="stylesheet" href="{% static 'fonts/flaticon.css' %}">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="{% static 'css/modal-video.min.css' %}">
+    <!-- slick css -->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+    <!-- toastr js -->
+    <link rel="stylesheet" href="{% static 'css/toastr.min.css' %}">
+    <!-- data table -->
+    <link rel="stylesheet" href="{% static 'css/jquery.dataTables.css' %}">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- responsive -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body class="homepage-3">
+
+    <div class="notification-alert">
+        <div class="notice-list">
+
+        </div>
+    </div>
+
+    <!-- preloader begin-->
+    <div class="preloader">
+        <img src="{% static 'img/tenor.gif' %}" alt="">
+    </div>
+    <!-- preloader end -->
+
+    <div class="mobile-navbar-wrapper">
+        {% block content %}
+        {% endblock %}
+        {% include 'partials/_footer.html' %}
+    </div>
+    <div class="d-xl-none d-lg-none d-block">
+        <div class="mobile-navigation-bar">
+            {% if request.user.is_authenticated %}
+            <ul>
+                <li>
+                    <a href="{% url 'profile' %}">
+                        <img src="{% static 'img/svg/profile.svg' %}" alt=""> 
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'investment' %}">
+                        <img src="{% static 'img/svg/money-transfering.svg' %}" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'withdraw' %}">
+                        <img src="{% static 'img/svg/withdraw.svg' %}" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#header">
+                        <img src="{% static 'img/svg/arrow.svg' %}" alt="">
+                    </a>
+                </li>
+            </ul>
+            {% else %}
+            <ul>
+                <li>
+                    <a href="{% url 'login' %}">
+                        <img src="{% static 'img/svg/profile.svg' %}" alt=""> 
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}">
+                        <img src="{% static 'img/svg/money-transfering.svg' %}" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}">
+                        <img src="{% static 'img/svg/withdraw.svg' %}" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#header">
+                        <img src="{% static 'img/svg/arrow.svg' %}" alt="">
+                    </a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+    <div class="d-xl-block d-lg-block d-none">
+        <div class="back-to-top-btn">
+            <a href="#">
+                    <img src="{% static 'img/svg/arrow.svg' %}" alt="">
+                </a>
+        </div>
+    </div>
+    {% include 'partials/_scripts.html' %}
+
+</body>
+
+</html>

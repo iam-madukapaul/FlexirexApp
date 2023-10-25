@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+<!-- breadcrumb begin -->
+<div class="breadcrumb-oitila">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-8">
+                <div class="part-txt">
+                    <h1>register</h1>
+                    <ul>
+                        <li>home</li>
+                        <li>register</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- breadcrumb end -->
+<!-- login begin -->
+<div class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-10 col-md-7 col-sm-9">
+                <div class="form-area">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12 col-lg-6">
+                            <div class="login-form">
+                                {{ form.media }}
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% bootstrap_form form %}
+                                    <div class="form-group form-check">
+                                        <button class="def-btn btn-form">Secure Sign Up <i class="fas fa-arrow-right"></i></button>
+                                    </div>
+                                </form>
+                                <div>
+                                    <div style="color: aliceblue;"> Already have an account? </div>
+                                    <div> <a style="color: aliceblue;" href="{% url 'login' %}"><u>Login here</u></a> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- login end -->
+
+{% endblock %}
+

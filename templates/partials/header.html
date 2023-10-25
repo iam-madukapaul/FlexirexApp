@@ -1,0 +1,183 @@
+{% load static %}
+<!-- header begin -->
+<div class="header header-style-4" id="header">
+    <div class="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3">
+                    <div class="welcome-text">
+                        <p>Welcome to Flexirex</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 d-xl-flex d-lg-flex d-block align-items-center">
+                    <div class="part-right">
+                        <ul>
+                            <li>
+                                <span class="simple-text">Sever Time : </span>
+                                <div class="server-time">
+                                    <div class="single-time clock-time">
+                                        <span class="icon">
+                                                <i class="far fa-clock"></i>
+                                            </span>
+                                        <span class="text">
+                                                <span id="hours"></span>
+                                        <span id="minutes"></span>
+                                        <span id="seconds"></span>
+                                        </span>
+                                    </div>
+                                    <div class="single-time">
+                                        <span class="icon">
+                                                <i class="fas fa-calendar-alt"></i>
+                                            </span>
+                                        <span class="text">
+                                                <span id="date"></span>
+                                        <span id="month"></span>
+                                        <span id="year"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                {% if request.user.is_authenticated %}
+                                <div class="user-panel">
+                                    <span>
+                                            Hello, {{ request.user.username }}</span>
+                                </div>
+                                {% else %}
+                                <div class="user-panel">
+                                    <span>
+                                            <a href="{% url 'login' %}" class="login-btn">Login</a>or</span><span><a href="{% url 'register' %}" class="login-btn">Register</a></span>
+                                </div>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-xl-3 col-lg-2 d-xl-flex d-lg-flex d-block align-items-center">
+                    <div class="row">
+                        <div class="col-4 d-xl-none d-lg-none d-block">
+                            <button class="navbar-toggler" type="button">
+                                    <span class="dag"></span>
+                                    <span class="dag2"></span>
+                                    <span class="dag3"></span>
+                                </button>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-8 d-xl-block d-lg-block d-flex align-items-center justify-content-end">
+                            <div class="logo">
+                                <a href="{% url 'index' %}">
+                                        <img src="{% static 'img/logo04.png' %}" alt="">
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-10">
+                    <div class="mainmenu">
+                        {% if request.user.is_authenticated %}
+                        <div class="d-xl-none d-lg-none d-block">
+                            <div class="user-profile">
+                                <div class="part-img">
+                                    <img src="{{user.userprofile.profile_picture.url}}" alt="">
+                                </div>
+                                <div class="user-info">
+                                    <span class="user-name">{{user.username}}</span>
+                                </div>
+                                <div class="log-out-area">
+                                    <a href="{% url 'logout' %}">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="d-xl-none d-lg-none d-block">
+                            <div class="user-profile">
+                                <div class="part-img">
+                                    <img src="{% static 'img/default.jpg' %}" alt="">
+                                </div>
+                                <div class="user-info">
+                                    <span class="user-name">Anonymous</span>
+                                </div>
+                                <div class="log-out-area">
+                                    <a href="{% url 'login' %}">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <nav class="navbar navbar-expand-lg">
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'index' %}">home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'plan' %}">Plan</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'faq' %}">Faq</a>
+                                    </li>
+
+                                    {% if request.user.is_authenticated %}
+                                    <li class="nav-item dropdown show">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" id="db-Dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                account
+                                            </a>
+                                        <div class="dropdown-menu" aria-labelledby="db-Dropdown">
+                                            <a class="dropdown-item" href="{% url 'account' %}">Dashboard</a>
+                                            <a class="dropdown-item" href="{% url 'investment' %}">Investment</a>
+                                            <a class="dropdown-item" href="{% url 'history' %}">Investment History</a>
+                                            <a class="dropdown-item" href="{% url 'withdrawal_history' %}">Withdrawal History</a>
+                                            <a class="dropdown-item" href="{% url 'profile' %}">My profile</a>
+                                        </div>
+                                    </li>
+                                    {% endif %}
+                                    <li class="nav-item dropdown show">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" id="pagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            info
+                                            </a>
+                                        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                                            <a class="dropdown-item" href="{% url 'affiliate' %}">Affiliate</a>
+                                            <a class="dropdown-item" href="{% url 'policy' %}">privacy & policy</a>
+                                        </div>
+                                    </li>
+
+                                    
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'about' %}">about us<span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'contact' %}">contact</a>
+                                    </li>
+                                    {% if request.user.is_authenticated %}
+                                    <li class="nav-item join-now-btn">
+                                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                                    </li>
+                                    {% else %}
+                                    <li class="nav-item join-now-btn">
+                                        <a class="nav-link" href="{% url 'register' %}">Join Now</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header end -->
+
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show mx-auto" role="alert">
+    {{message}}
+    </div>
+{% endfor %}
+{% endif %}

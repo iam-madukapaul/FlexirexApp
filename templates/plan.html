@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+<!-- breadcrumb begin -->
+<div class="breadcrumb-oitila">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-8">
+                <div class="part-txt">
+                    <h1>plan</h1>
+                    <ul>
+                        <li>home</li>
+                        <li>plan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb end -->
+
+<!-- prcing plan begin -->
+<div class="pricing-plan">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-8">
+                <div class="section-title">
+                    <h2>
+                        Check out <span class="special">Flexirex</span> Investment Plans!
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center justify-content-md-start">
+            <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6 prc-col">
+                <div class="single-plan">
+                    <h3>Basic Plan</h3>
+                    <div class="plan-icon">
+                        <img src="{% static 'img/icon/bronze-medal.png' %}" alt="">
+                    </div>
+                    <div class="feature-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Minimum Deposit $50</li>
+                            <li><i class="fas fa-check"></i> Miximum Deposit $1,000</li>
+                            <li><i class="fas fa-check"></i> l- Enhanced Security</li>
+                            <li><i class="fas fa-check"></i> $10 Referral Bonus</li>
+                            <li><i class="fas fa-check"></i> 24/7 Dedicated Support</li>
+                        </ul>
+                    </div>
+                    <div class="price-info">
+                        <span class="parcent">1.5%</span>
+                        <span class="price">1.5%<small>/per day</small></span>
+                    </div>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'investment' %}" class="btn-hyipox-medium ">Invest now</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn-hyipox-medium ">Invest now</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6 prc-col">
+                <div class="single-plan active">
+                    <h3>Standard Plan</h3>
+                    <div class="plan-icon">
+                        <img src="{% static 'img/icon/trophy-1.png' %}" alt="">
+                    </div>
+                    <div class="feature-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Minimum Deposit $5,000</li>
+                            <li><i class="fas fa-check"></i> Miximum Deposit $50,000</li>
+                            <li><i class="fas fa-check"></i> l- Enhanced Security</li>
+                            <li><i class="fas fa-check"></i> $10 Referral Bonus</li>
+                            <li><i class="fas fa-check"></i> 24/7 Dedicated Support</li>
+                        </ul>
+                    </div>
+                    <div class="price-info">
+                        <span class="parcent">3.5%</span>
+                        <span class="price">3.5%<small>/per day</small></span>
+                    </div>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'investment' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6 prc-col">
+                <div class="single-plan">
+                    <h3>Silver Plan</h3>
+                    <div class="plan-icon">
+                        <img src="{% static 'img/icon/bronze-medal.png' %}" alt="">
+                    </div>
+                    <div class="feature-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Minimum Deposit $10,000</li>
+                            <li><i class="fas fa-check"></i> Miximum Deposit $100,000</li>
+                            <li><i class="fas fa-check"></i> l- Enhanced Security</li>
+                            <li><i class="fas fa-check"></i> $10 Referral Bonus</li>
+                            <li><i class="fas fa-check"></i> 24/7 Dedicated Support</li>
+                        </ul>
+                    </div>
+                    <div class="price-info">
+                        <span class="parcent">0.5%</span>
+                        <span class="price">0.5%<small>/per day</small></span>
+                    </div>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'investment' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6 prc-col mt-5">
+                <div class="single-plan">
+                    <h3>Premium Plan</h3>
+                    <div class="plan-icon">
+                        <img src="{% static 'img/icon/bronze-medal.png' %}" alt="">
+                    </div>
+                    <div class="feature-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Minimum Deposit $1,000</li>
+                            <li><i class="fas fa-check"></i> Miximum Deposit $10,000</li>
+                            <li><i class="fas fa-check"></i> l- Enhanced Security</li>
+                            <li><i class="fas fa-check"></i> $10 Referral Bonus</li>
+                            <li><i class="fas fa-check"></i> 24/7 Dedicated Support</li>
+                        </ul>
+                    </div>
+                    <div class="price-info">
+                        <span class="parcent">2.5%</span>
+                        <span class="price">2.5%<small>/per day</small></span>
+                    </div>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'investment' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6 prc-col mt-5">
+                <div class="single-plan active">
+                    <h3>Gold Plan</h3>
+                    <div class="plan-icon">
+                        <img src="{% static 'img/icon/trophy-1.png' %}" alt="">
+                    </div>
+                    <div class="feature-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Minimum Deposit $15,000</li>
+                            <li><i class="fas fa-check"></i> Miximum Deposit $500,000</li>
+                            <li><i class="fas fa-check"></i> l- Enhanced Security</li>
+                            <li><i class="fas fa-check"></i> $10 Referral Bonus</li>
+                            <li><i class="fas fa-check"></i> 24/7 Dedicated Support</li>
+                        </ul>
+                    </div>
+                    <div class="price-info">
+                        <span class="parcent">4.5%</span>
+                        <span class="price">4.5%<small>/per day</small></span>
+                    </div>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'investment' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6 prc-col mt-5">
+                <div class="single-plan">
+                    <h3>Diamond Plan</h3>
+                    <div class="plan-icon">
+                        <img src="{% static 'img/icon/trophy.png' %}" alt="">
+                    </div>
+                    <div class="feature-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Minimum Deposit $50,000</li>
+                            <li><i class="fas fa-check"></i> Miximum Deposit $1,000,000</li>
+                            <li><i class="fas fa-check"></i> l- Enhanced Security</li>
+                            <li><i class="fas fa-check"></i> $10 Referral Bonus</li>
+                            <li><i class="fas fa-check"></i> 24/7 Dedicated Support</li>
+                        </ul>
+                    </div>
+                    <div class="price-info">
+                        <span class="parcent">5.5%</span>
+                        <span class="price">5.5%<small>/per day</small></span>
+                    </div>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'investment' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn-hyipox-medium">Invest now</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- prcing plan end -->
+
+
+
+{% endblock %}

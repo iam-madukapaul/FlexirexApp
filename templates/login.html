@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+<!-- breadcrumb begin -->
+<div class="breadcrumb-oitila">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-8">
+                <div class="part-txt">
+                    <h1>login</h1>
+                    <ul>
+                        <li>home</li>
+                        <li>login</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb end -->
+
+<!-- login begin -->
+<div class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-10 col-md-7 col-sm-9">
+                <div class="form-area">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12 col-lg-6">
+                            <div class="login-form">
+                                {{ form.media }}
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% bootstrap_form form %}
+                                    
+                                    <div class="form-group form-check">
+                                        <button class="btn-form">Login</button>
+                                        <div class="other-option">
+                                            <a href="{% url 'reset_password' %}">forgot password?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div>
+                                    <div style="color: aliceblue;"> Don't have an account? </div>
+                                    <div> <a style="color: aliceblue;" href="{% url 'register' %}"><u>Register here</u></a> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- login end -->
+
+{% endblock %}
+

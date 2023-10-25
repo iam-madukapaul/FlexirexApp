@@ -1,0 +1,100 @@
+{% load static %}
+<!-- footer begin -->
+<div class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
+                    <div class="about-widget">
+                        <a href="{% url 'index' %}" class="logo">
+                                <img src="{% static 'img/logo03.png' %}" alt="">
+                            </a>
+                        <p>Empowering Your Financial Journey Through Cryptocurrency. Invest with Confidence in the Future of Digital Assets.</p>
+                        <div class="social-links">
+                            <ul>
+                                <li>
+                                    <a class="single-link">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                </li>
+                                <li>
+                                    <a class="single-link">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                </li>
+                                <li>
+                                    <a class="single-link">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                </li>
+                                <li>
+                                    <a class="single-link">
+                                            <i class="fab fa-pinterest-p"></i>
+                                        </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-10">
+                    <div class="link-widget">
+                        <h4 class="title">
+                            Useful links
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="{% url 'about' %}" class="single-link">
+                                        About Us
+                                    </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'affiliate' %}" class="single-link">
+                                        Affiliate
+                                    </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'plan' %}" class="single-link">
+                                        Investment Plan
+                                    </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'faq' %}" class="single-link">
+                                        Faq
+                                    </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'policy' %}" class="single-link">
+                                        Terms & Policy
+                                    </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-10">
+                    <div class="newsletter-widget">
+                        <h4 class="title">
+                            Subscribe To Our Newsletter
+                        </h4>
+                        <form class="newsletter-form">
+                            <input type="text" placeholder="Enter Your Mail Address">
+                            <button class="def-btn def-small">
+                                    Subscribe
+                                </button>
+                        </form>
+                        <p>Stay Informed and Stay Ahead in the World of Cryptocurrency. Subscribe to Our Newsletter for the Latest Insights and Trends. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-8">
+                    <p>Copyright © <a href="{% url 'index' %}">Flexirex</a> - 2023. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer end -->
